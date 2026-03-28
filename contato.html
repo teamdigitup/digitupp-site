@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contato — digitUP Agência de Marketing Digital</title>
+<meta name="description" content="Entre em contato com a digitUP. Fale com nossos especialistas e agende um diagnóstico gratuito para escalar seu negócio."/>
+<meta property="og:type" content="website"/><meta property="og:title" content="Contato — digitUP"/><meta property="og:description" content="Fale com nossos especialistas. E-mail: teamdigitup@gmail.com · WhatsApp: (11) 99335-3331"/><meta property="og:image" content="og-image.jpg"/><meta property="og:site_name" content="digitUP"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="og-image.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.contact-form-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px}
+.contact-info-col{display:flex;flex-direction:column;gap:20px}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;display:flex;align-items:flex-start;gap:14px;transition:all .3s}
+.info-card:hover{border-color:rgba(124,58,237,.4);transform:translateY(-2px)}
+.info-icon{width:44px;height:44px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-icon svg{width:20px;height:20px;stroke:var(--purple2);fill:none;stroke-width:1.8}
+.info-label{font-size:.7rem;font-weight:700;color:var(--purple3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.info-val{font-size:.88rem;color:#fff;font-weight:600;margin-bottom:2px}
+.info-sub{font-size:.78rem;color:var(--muted)}
+.map-placeholder{background:var(--card);border:1px solid var(--border);border-radius:14px;height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.map-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(124,58,237,.06),transparent 70%)}
+.map-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(124,58,237,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.06) 1px,transparent 1px);background-size:30px 30px}
+.map-pin{width:40px;height:40px;background:var(--grad);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(124,58,237,.5);position:relative;z-index:1}
+.map-pin svg{transform:rotate(45deg);width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}
+.contact-form-title{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:6px}
+.contact-form-sub{font-size:.83rem;color:var(--muted);margin-bottom:28px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-submit{width:100%;padding:14px;background:var(--grad);border:none;color:#fff;border-radius:9px;font-size:.9rem;font-weight:800;cursor:pointer;transition:all .2s;box-shadow:0 4px 20px rgba(124,58,237,.35);margin-top:4px;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px}
+.contact-submit:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(124,58,237,.5)}
+.contact-submit svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="nav-slot"></div>
+
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-eyebrow">Fale Conosco</div>
+  <h1 class="page-title">Entre em <span>Contato</span></h1>
+  <p class="page-sub">Nossa equipe está pronta para ajudar. Resposta garantida em até 2 horas durante o horário comercial.</p>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- FORM -->
+      <div class="contact-form-card reveal">
+        <div class="contact-form-title">Envie uma mensagem</div>
+        <p class="contact-form-sub">Preencha o formulário e um especialista entrará em contato em até 2 horas.</p>
+        <form onsubmit="submitContact(event)">
+          <div class="form-row">
+            <div class="field"><label>Nome</label><input type="text" placeholder="João" required/></div>
+            <div class="field"><label>Sobrenome</label><input type="text" placeholder="Silva" required/></div>
+          </div>
+          <div class="field"><label>E-mail Corporativo</label><input type="email" placeholder="joao@empresa.com" required/></div>
+          <div class="form-row">
+            <div class="field"><label>Telefone / WhatsApp</label><input type="tel" placeholder="+55 (11) 99999-9999" required/></div>
+            <div class="field"><label>Empresa</label><input type="text" placeholder="Nome da empresa"/></div>
+          </div>
+          <div class="field">
+            <label>Assunto</label>
+            <select>
+              <option value="">Selecione o assunto...</option>
+              <option>Diagnóstico Gratuito</option>
+              <option>Informações sobre Planos</option>
+              <option>Tráfego Pago</option>
+              <option>Gestão de Redes Sociais</option>
+              <option>Funis de Vendas</option>
+              <option>SEO e Conteúdo</option>
+              <option>Branding e Design</option>
+              <option>Consultoria Estratégica</option>
+              <option>Grupo VIP</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field"><label>Mensagem</label><textarea placeholder="Descreva seu projeto, objetivos e como podemos ajudar..." rows="5" required></textarea></div>
+          <button type="submit" class="contact-submit">
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+
+      <!-- INFO -->
+      <div class="contact-info-col">
+        <div class="info-card reveal">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="info-label">E-mail</div>
+            <div class="info-val"><a href="mailto:teamdigitup@gmail.com" style="color:inherit">teamdigitup@gmail.com</a></div>
+            <div class="info-sub">Resposta em até 2 horas</div>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+          <div>
+            <div class="info-label">WhatsApp</div>
+            <div class="info-val"><a href="https://wa.me/5511993353331" target="_blank" style="color:inherit">(11) 99335-3331</a></div>
+            <div class="info-sub">Seg–Sex, 9h às 18h</div>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <div class="info-label">Horário de Atendimento</div>
+            <div class="info-val">Segunda a Sexta</div>
+            <div class="info-sub">9h às 18h (horário de Brasília)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ QUICK LINKS -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Dúvidas Rápidas</div>
+      <h2 class="section-title">Perguntas frequentes</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <a href="planos.html" class="card reveal" style="padding:22px;display:flex;align-items:center;gap:12px;text-decoration:none">
+        <div class="icon-box icon-box-sm"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div>
+          <div style="font-size:.85rem;font-weight:700;color:#fff;margin-bottom:2px">Planos e Preços</div>
+          <div style="font-size:.75rem;color:var(--muted)">Ver todos os planos disponíveis</div>
+        </div>
+      </a>
+      <a href="servicos.html" class="card reveal" style="padding:22px;display:flex;align-items:center;gap:12px;text-decoration:none">
+        <div class="icon-box icon-box-sm"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div>
+          <div style="font-size:.85rem;font-weight:700;color:#fff;margin-bottom:2px">Nossos Serviços</div>
+          <div style="font-size:.75rem;color:var(--muted)">Conheça todas as soluções</div>
+        </div>
+      </a>
+      <a href="vip.html" class="card reveal" style="padding:22px;display:flex;align-items:center;gap:12px;text-decoration:none">
+        <div class="icon-box icon-box-sm icon-box-gold"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div>
+          <div style="font-size:.85rem;font-weight:700;color:#fff;margin-bottom:2px">Grupo VIP</div>
+          <div style="font-size:.75rem;color:var(--muted)">Comunidade exclusiva digitUP</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<div id="modal-slot"></div>
+<script src="components.js"></script>
+<script src="main.js"></script>
+<script>
+function submitContact(e) {
+  e.preventDefault();
+  showToast('Mensagem enviada! Retornaremos em até 2 horas.');
+  e.target.reset();
+}
+</script>
+</body>
+</html>

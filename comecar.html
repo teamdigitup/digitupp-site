@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Comece do Zero — digitUP Agência de Marketing Digital</title>
+<meta name="description" content="Aprenda marketing digital do zero com a digitUP. Métodos proprietários, suporte especializado e resultados reais para iniciantes."/>
+<meta property="og:type" content="website"/><meta property="og:title" content="Comece do Zero — digitUP"/><meta property="og:description" content="Aprenda marketing digital do zero com métodos proprietários da digitUP."/><meta property="og:image" content="og-image.jpg"/><meta property="og:site_name" content="digitUP"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="og-image.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* ── WHY NOW CARDS ── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .3s}
+.why-card:hover{border-color:rgba(124,58,237,.4);transform:translateY(-4px);box-shadow:var(--glow)}
+.why-icon{width:52px;height:52px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.why-icon svg{width:24px;height:24px;stroke:var(--purple2);fill:none;stroke-width:1.8}
+.why-title{font-size:1rem;font-weight:800;color:#fff;margin-bottom:8px}
+.why-desc{font-size:.85rem;color:var(--muted);line-height:1.75}
+
+/* ── LEARN GRID ── */
+.learn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.learn-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px;display:flex;align-items:flex-start;gap:16px;transition:all .3s}
+.learn-item:hover{border-color:rgba(124,58,237,.35);transform:translateY(-2px);box-shadow:0 0 24px rgba(124,58,237,.15)}
+.learn-icon{width:42px;height:42px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.learn-icon svg{width:20px;height:20px;stroke:var(--purple2);fill:none;stroke-width:1.8}
+.learn-title{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:4px}
+.learn-desc{font-size:.8rem;color:var(--muted);line-height:1.65}
+
+/* ── METHODS CARD ── */
+.methods-card{background:var(--card);border:1px solid var(--purple);border-radius:16px;padding:40px;box-shadow:var(--glow)}
+.methods-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.method-block{background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.15);border-radius:12px;padding:24px}
+.method-name{font-size:.75rem;font-weight:800;color:var(--purple3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.method-title{font-size:1rem;font-weight:800;color:#fff;margin-bottom:10px}
+.method-desc{font-size:.82rem;color:var(--muted);line-height:1.7}
+.method-steps{display:flex;flex-direction:column;gap:7px;margin-top:12px}
+.method-step{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;color:var(--muted)}
+.method-step-num{width:20px;height:20px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:#fff;flex-shrink:0;margin-top:1px}
+
+/* ── BEGINNER PLAN CARDS ── */
+.beg-plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.beg-plan-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;display:flex;flex-direction:column;transition:all .3s}
+.beg-plan-card:hover{transform:translateY(-4px);box-shadow:var(--glow)}
+.beg-plan-card.featured{border-color:var(--purple);box-shadow:var(--glow);background:linear-gradient(180deg,rgba(124,58,237,.08) 0%,var(--card) 100%)}
+.beg-plan-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);border-radius:16px 16px 0 0}
+.beg-popular{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:.65rem;font-weight:800;padding:4px 16px;border-radius:20px;white-space:nowrap;letter-spacing:.5px}
+.beg-tag{display:inline-block;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:var(--purple3);font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px}
+.beg-name{font-size:.7rem;font-weight:800;color:var(--purple3);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.beg-price{font-size:2.8rem;font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1;margin-bottom:4px}
+.beg-price sup{font-size:1rem;vertical-align:top;margin-top:8px;font-weight:700;color:var(--muted)}
+.beg-period{font-size:.75rem;color:var(--muted);margin-bottom:14px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.beg-desc{font-size:.8rem;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.beg-features{display:flex;flex-direction:column;gap:9px;margin-bottom:16px;flex:1}
+.beg-item{display:flex;align-items:flex-start;gap:8px;font-size:.82rem}
+.beg-item.yes{color:var(--text)}
+.beg-item.no{color:var(--muted)}
+.beg-icon{width:16px;height:16px;flex-shrink:0;margin-top:2px}
+.beg-icon svg{width:16px;height:16px;fill:none;stroke-width:2.5}
+.beg-icon.yes svg{stroke:var(--green)}
+.beg-icon.no svg{stroke:var(--muted);opacity:.5}
+.beg-icon.gold svg{stroke:#fbbf24;fill:rgba(251,191,36,.1)}
+.beg-support{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:8px;font-size:.8rem;font-weight:600;margin-bottom:20px;border:1px solid var(--border)}
+.beg-support.none{color:var(--muted);background:rgba(255,255,255,.02)}
+.beg-support.none svg{stroke:var(--muted)}
+.beg-support.group{color:var(--green);background:rgba(74,222,128,.04);border-color:rgba(74,222,128,.15)}
+.beg-support.group svg{stroke:var(--green)}
+.beg-support.vip{color:#fbbf24;background:rgba(251,191,36,.04);border-color:rgba(251,191,36,.15)}
+.beg-support.vip svg{stroke:#fbbf24}
+.beg-support svg{width:15px;height:15px;fill:none;stroke-width:2;flex-shrink:0}
+.beg-btn-wrap .btn{width:100%}
+
+/* ── PIX NOTE ── */
+.beg-pix-note{text-align:center;margin-top:24px;font-size:.78rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.beg-pix-dot{width:3px;height:3px;background:var(--border2);border-radius:50%;display:inline-block}
+
+/* ── CTA SECTION ── */
+.cta-box{background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(168,85,247,.08));border:1px solid rgba(124,58,237,.25);border-radius:20px;padding:56px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(124,58,237,.15),transparent 60%);pointer-events:none}
+.cta-title{font-size:2.2rem;font-weight:900;color:#fff;letter-spacing:-.4px;margin-bottom:12px;position:relative;z-index:1}
+.cta-sub{font-size:.95rem;color:var(--muted);margin-bottom:28px;position:relative;z-index:1}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+
+@media(max-width:900px){
+  .why-grid{grid-template-columns:1fr}
+  .learn-grid{grid-template-columns:1fr}
+  .methods-grid{grid-template-columns:1fr}
+  .beg-plans-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}
+  .cta-box{padding:36px 20px}
+  .cta-title{font-size:1.6rem}
+}
+@media(max-width:600px){
+  .methods-card{padding:24px}
+  .beg-price{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+<div id="nav-slot"></div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-eyebrow">Para Iniciantes</div>
+  <h1 class="page-title">Comece do zero e <span>chegue longe</span></h1>
+  <p class="page-sub">Aprenda marketing digital do zero com a orientação da digitUP. Métodos comprovados, suporte real e um caminho claro para transformar conhecimento em resultado.</p>
+</div>
+
+<!-- POR QUE COMEÇAR AGORA -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Oportunidade</div>
+      <h2 class="section-title">Por que começar agora?</h2>
+      <p class="section-sub">O mercado digital não espera. Quem começa hoje sai na frente de quem vai começar amanhã.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <div class="why-title">Mercado em crescimento</div>
+        <p class="why-desc">O marketing digital cresce 15% ao ano no Brasil. Profissionais qualificados são escassos — a demanda supera a oferta e quem se especializa agora tem vantagem real.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="why-title">Renda extra ou nova carreira</div>
+        <p class="why-desc">Aprenda a gerar renda extra como freelancer ou mude de carreira completamente. Habilidades digitais abrem portas em qualquer setor e permitem trabalhar de qualquer lugar.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="why-title">Suporte especializado</div>
+        <p class="why-desc">Você não está sozinho nessa jornada. Nossa equipe acompanha cada passo, tira dúvidas e garante que você avance com segurança e sem perder tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VOCÊ VAI APRENDER -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Conteúdo</div>
+      <h2 class="section-title">O que você vai aprender</h2>
+      <p class="section-sub">Um currículo completo e prático, desenvolvido para quem está começando e quer resultados reais.</p>
+    </div>
+    <div class="learn-grid">
+      <div class="learn-item reveal">
+        <div class="learn-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div>
+          <div class="learn-title">Fundamentos do Marketing Digital</div>
+          <p class="learn-desc">Entenda como o ecossistema digital funciona, os principais canais, métricas essenciais e como pensar estrategicamente antes de agir.</p>
+        </div>
+      </div>
+      <div class="learn-item reveal">
+        <div class="learn-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div>
+          <div class="learn-title">Como criar e gerenciar anúncios pagos</div>
+          <p class="learn-desc">Do zero ao primeiro anúncio no Meta Ads e Google Ads. Aprenda a segmentar, criar criativos e otimizar campanhas para gastar menos e vender mais.</p>
+        </div>
+      </div>
+      <div class="learn-item reveal">
+        <div class="learn-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3z"/><path d="M7 7v14"/><path d="M17 7v14"/><path d="M3 12h18"/></svg>
+        </div>
+        <div>
+          <div class="learn-title">Funis de vendas do zero</div>
+          <p class="learn-desc">Construa jornadas de compra que convertem visitantes em clientes. Aprenda a criar páginas de captura, sequências de e-mail e automações simples.</p>
+        </div>
+      </div>
+      <div class="learn-item reveal">
+        <div class="learn-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 4s-2.5 2.5-5 2.5S12 4 9 4 4 6.5 4 6.5V22"/><path d="M4 12s2.5-2.5 5-2.5 5 2.5 8 2.5 5-2.5 5-2.5"/></svg>
+        </div>
+        <div>
+          <div class="learn-title">Gestão de redes sociais</div>
+          <p class="learn-desc">Planejamento de conteúdo, calendário editorial, criação de posts que engajam e estratégias para crescer organicamente no Instagram, TikTok e LinkedIn.</p>
+        </div>
+      </div>
+      <div class="learn-item reveal">
+        <div class="learn-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div>
+          <div class="learn-title">SEO e conteúdo estratégico</div>
+          <p class="learn-desc">Apareça no Google sem pagar por clique. Aprenda pesquisa de palavras-chave, otimização on-page e como criar conteúdo que atrai e converte.</p>
+        </div>
+      </div>
+      <div class="learn-item reveal">
+        <div class="learn-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div>
+          <div class="learn-title">Métodos proprietários da digitUP</div>
+          <p class="learn-desc">Acesse os frameworks exclusivos desenvolvidos pela nossa agência com base em anos de experiência e mais de R$3M gerados para clientes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODOS PROPRIETÁRIOS -->
+<section class="section">
+  <div class="container">
+    <div class="methods-card reveal">
+      <div class="section-eyebrow">Exclusivo digitUP</div>
+      <h2 class="section-title" style="margin-top:10px">Nossos Métodos Proprietários</h2>
+      <p class="section-sub" style="max-width:600px">A digitUP desenvolveu seus próprios frameworks ao longo de anos de operação real. Você aprende o que funciona na prática, não teoria de livro.</p>
+      <div class="methods-grid">
+        <div class="method-block">
+          <div class="method-name">Método</div>
+          <div class="method-title">D.A.T.A.</div>
+          <p class="method-desc">Diagnóstico, Ação, Teste e Amplificação. Um ciclo de 4 etapas para tomar decisões baseadas em dados e escalar o que funciona.</p>
+          <div class="method-steps">
+            <div class="method-step"><span class="method-step-num">D</span>Diagnóstico completo do negócio e mercado</div>
+            <div class="method-step"><span class="method-step-num">A</span>Ação estratégica com foco no resultado</div>
+            <div class="method-step"><span class="method-step-num">T</span>Teste contínuo de criativos e abordagens</div>
+            <div class="method-step"><span class="method-step-num">A</span>Amplificação do que gera mais retorno</div>
+          </div>
+        </div>
+        <div class="method-block">
+          <div class="method-name">Método</div>
+          <div class="method-title">F.U.N.I.L. 360°</div>
+          <p class="method-desc">Uma abordagem de funil completo que cobre todas as etapas da jornada do cliente, do primeiro contato ao pós-venda e recompra.</p>
+          <div class="method-steps">
+            <div class="method-step"><span class="method-step-num">F</span>Funil de atração e geração de tráfego</div>
+            <div class="method-step"><span class="method-step-num">U</span>Upsell e nutrição de leads qualificados</div>
+            <div class="method-step"><span class="method-step-num">N</span>Nutrição com conteúdo e automação</div>
+            <div class="method-step"><span class="method-step-num">I</span>Integração de canais para máxima conversão</div>
+          </div>
+        </div>
+        <div class="method-block">
+          <div class="method-name">Sistema</div>
+          <div class="method-title">Escala Progressiva</div>
+          <p class="method-desc">Comece pequeno, valide o que funciona e escale com segurança. Evite desperdiçar verba antes de ter dados suficientes para crescer.</p>
+          <div class="method-steps">
+            <div class="method-step"><span class="method-step-num">1</span>Inicie com orçamento mínimo e múltiplos testes</div>
+            <div class="method-step"><span class="method-step-num">2</span>Identifique os criativos e públicos vencedores</div>
+            <div class="method-step"><span class="method-step-num">3</span>Escale gradualmente os anúncios validados</div>
+            <div class="method-step"><span class="method-step-num">4</span>Reinvista o lucro para crescimento sustentável</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS PARA INICIANTES -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Planos para Iniciantes</div>
+      <h2 class="section-title">Escolha o seu ponto de partida</h2>
+      <p class="section-sub">Três planos desenhados para cada estágio da sua jornada. Você pode evoluir de plano a qualquer momento.</p>
+    </div>
+
+    <div class="beg-plans-grid">
+
+      <!-- BÁSICO -->
+      <div class="beg-plan-card reveal">
+        <div class="beg-tag">Iniciantes absolutos</div>
+        <div class="beg-name">Básico</div>
+        <div class="beg-price"><sup>R$</sup>97</div>
+        <div class="beg-period">/mês · pagamento via PIX</div>
+        <p class="beg-desc">Para quem nunca teve contato com marketing digital e quer aprender os fundamentos com calma, no seu ritmo.</p>
+        <div class="beg-features">
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Curso completo de Marketing Digital (módulos gravados)</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Fundamentos de tráfego pago (Google e Meta)</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Funis e conversão — teoria e prática</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Acesso vitalício às aulas gravadas</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Método D.A.T.A. — módulo introdutório</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Atualizações de conteúdo por 3 meses</div>
+        </div>
+        <div class="beg-support none">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Sem suporte incluso
+        </div>
+        <div class="beg-btn-wrap">
+          <button class="btn btn-outline" onclick="goToWhatsApp('Plano Básico Iniciante','R$97/mês')">Começar com o Básico</button>
+        </div>
+      </div>
+
+      <!-- MÉDIO (FEATURED) -->
+      <div class="beg-plan-card featured reveal">
+        <div class="beg-popular">Mais Popular</div>
+        <div class="beg-tag">Quem quer evoluir mais rápido</div>
+        <div class="beg-name">Médio</div>
+        <div class="beg-price"><sup>R$</sup>197</div>
+        <div class="beg-period">/mês · pagamento via PIX</div>
+        <p class="beg-desc">Para quem já tem noção básica e quer acelerar com conteúdo avançado, comunidade ativa e atualizações constantes.</p>
+        <div class="beg-features">
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Tudo do Básico</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Grupo exclusivo no WhatsApp com dicas diárias</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Atualizações constantes de conteúdo</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Conteúdos extras e bônus mensais</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Método F.U.N.I.L. 360° completo</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Templates e scripts prontos para usar</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Acesso a gravações de mentorias em grupo</div>
+        </div>
+        <div class="beg-support group">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Suporte em grupo
+        </div>
+        <div class="beg-btn-wrap">
+          <button class="btn btn-primary" onclick="goToWhatsApp('Plano Médio Iniciante','R$197/mês')">Começar com o Médio</button>
+        </div>
+      </div>
+
+      <!-- AVANÇADO VIP -->
+      <div class="beg-plan-card reveal" style="border-color:rgba(251,191,36,.25)">
+        <div class="beg-tag" style="background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.2);color:#fbbf24">Quem quer resultado real</div>
+        <div class="beg-name" style="color:#fbbf24">Avançado VIP</div>
+        <div class="beg-price"><sup>R$</sup>397</div>
+        <div class="beg-period">/mês · pagamento via PIX</div>
+        <p class="beg-desc">Para quem quer o máximo: acompanhamento individual, estratégias reais da agência e acesso completo aos métodos proprietários.</p>
+        <div class="beg-features">
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Tudo do Médio</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Grupo VIP com acompanhamento individual</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Landing pages profissionais incluídas (1/mês)</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Estratégias reais usadas pela digitUP com clientes</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Métodos proprietários completos (D.A.T.A. + F.U.N.I.L. 360° + Escala Progressiva)</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Mentoria individual mensal (1h)</div>
+          <div class="beg-item yes"><span class="beg-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Revisão de campanhas e funis pessoais</div>
+        </div>
+        <div class="beg-support vip">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Suporte próximo e individual
+        </div>
+        <div class="beg-btn-wrap">
+          <button class="btn btn-primary" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#04040a;font-weight:900" onclick="goToWhatsApp('Plano Avançado VIP Iniciante','R$397/mês')">Começar com o VIP</button>
+        </div>
+      </div>
+
+    </div><!-- /beg-plans-grid -->
+
+    <div class="beg-pix-note reveal">
+      <span style="display:inline-flex;align-items:center;gap:5px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Pagamento via PIX
+      </span>
+      <span class="beg-pix-dot"></span>
+      <span>Cancele quando quiser</span>
+      <span class="beg-pix-dot"></span>
+      <span>Acesso enviado em até 1h após confirmação</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="section-eyebrow" style="position:relative;z-index:1">Comece hoje</div>
+      <h2 class="cta-title">Pronto para começar?</h2>
+      <p class="cta-sub">Dê o primeiro passo agora. Nossa equipe está pronta para te ajudar a escolher o melhor caminho.</p>
+      <div class="cta-btns">
+        <a href="planos.html" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Ver todos os planos
+        </a>
+        <button class="btn btn-outline btn-lg" onclick="goToWhatsApp('Plano para Iniciantes','')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<div id="modal-slot"></div>
+<script src="components.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Planos e Preços — digitUP Agência de Marketing Digital</title>
+<meta name="description" content="Soluções de marketing digital para cada estágio do seu negócio. Starter, Growth e Enterprise. Metodologias proprietárias e equipe especializada."/>
+<meta property="og:type" content="website"/><meta property="og:title" content="Planos e Preços — digitUP"/><meta property="og:description" content="Planos Starter, Growth e Enterprise. Para empresas e iniciantes."/><meta property="og:image" content="og-image.jpg"/><meta property="og:site_name" content="digitUP"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="og-image.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* ── INTRO STRIP ── */
+.intro-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:72px}
+.intro-strip-item{padding:24px 28px;display:flex;align-items:center;gap:14px;border-right:1px solid var(--border)}
+.intro-strip-item:last-child{border-right:none}
+.intro-strip-icon{width:40px;height:40px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.intro-strip-icon svg{width:18px;height:18px;stroke:var(--purple2);fill:none;stroke-width:2}
+.intro-strip-label{font-size:.88rem;font-weight:700;color:#fff}
+.intro-strip-sub{font-size:.75rem;color:var(--muted);margin-top:2px}
+
+/* ── PLAN CARDS ── */
+.plans-grid-biz{display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:stretch;border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.plan-col{background:var(--card);border-right:1px solid var(--border);padding:36px 32px 32px;display:flex;flex-direction:column;position:relative}
+.plan-col:last-child{border-right:none}
+.plan-col.featured{background:linear-gradient(180deg,rgba(124,58,237,.09) 0%,var(--card) 60%);border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple)}
+.plan-col.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.plan-badge{position:absolute;top:16px;right:16px;background:var(--grad);color:#fff;font-size:.62rem;font-weight:800;padding:3px 12px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase}
+.plan-tag{display:inline-block;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:var(--purple3);font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px}
+.plan-name-biz{font-size:.7rem;font-weight:800;color:var(--purple3);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.plan-price-biz{font-size:3rem;font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1;margin-bottom:4px}
+.plan-price-biz sup{font-size:1.1rem;vertical-align:top;margin-top:10px;font-weight:700;color:var(--muted)}
+.plan-period-biz{font-size:.75rem;color:var(--muted);margin-bottom:16px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.plan-ideal{font-size:.78rem;color:var(--muted);line-height:1.65;margin-bottom:22px;padding:12px 14px;background:rgba(255,255,255,.02);border-radius:8px;border-left:2px solid rgba(124,58,237,.3)}
+
+/* ── FEATURE GROUPS ── */
+.feat-group{margin-bottom:18px}
+.feat-group-label{font-size:.6rem;font-weight:800;color:var(--purple3);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(124,58,237,.12)}
+.feat-list{display:flex;flex-direction:column;gap:7px}
+.feat-item{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;line-height:1.5}
+.feat-item.yes{color:var(--text)}
+.feat-item.no{color:var(--muted)}
+.feat-icon{width:16px;height:16px;flex-shrink:0;margin-top:1px}
+.feat-icon svg{width:16px;height:16px;fill:none;stroke-width:2.5}
+.feat-icon.yes svg{stroke:var(--green)}
+.feat-icon.no svg{stroke:var(--muted);opacity:.5}
+.plan-btn-wrap{margin-top:auto;padding-top:24px}
+.plan-btn-wrap .btn{width:100%}
+
+/* ── COMPARISON TABLE ── */
+.comp-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:14px;margin-top:56px}
+.comp-table{width:100%;border-collapse:collapse;min-width:640px}
+.comp-table thead th{padding:18px 20px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);text-align:center;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
+.comp-table thead th:first-child{text-align:left;color:var(--text)}
+.comp-table thead th.th-featured{color:var(--purple2);background:rgba(124,58,237,.06)}
+.comp-table tbody tr:nth-child(even){background:rgba(255,255,255,.015)}
+.comp-table tbody tr:hover{background:rgba(124,58,237,.04)}
+.comp-table td{padding:14px 20px;font-size:.82rem;color:var(--muted);text-align:center;border-bottom:1px solid rgba(255,255,255,.04)}
+.comp-table td:first-child{text-align:left;color:var(--text);font-weight:500}
+.comp-table td.td-featured{background:rgba(124,58,237,.04)}
+.comp-table .ct-check svg{stroke:var(--green);fill:none;stroke-width:2.5;width:16px;height:16px}
+.comp-table .ct-x svg{stroke:var(--muted);fill:none;stroke-width:2.5;width:16px;height:16px;opacity:.4}
+.comp-table .ct-check,.comp-table .ct-x{display:flex;align-items:center;justify-content:center}
+.comp-table .ct-val{color:#fff;font-weight:600;font-size:.8rem}
+.comp-table .ct-cat{background:rgba(124,58,237,.06);font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple3);padding:10px 20px}
+.comp-table .ct-cat td{color:var(--purple3);font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;background:rgba(124,58,237,.06)}
+
+/* ── PIX NOTE ── */
+.pix-strip{text-align:center;margin-top:28px;font-size:.8rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.pix-strip span{display:inline-flex;align-items:center;gap:5px}
+.pix-dot{width:3px;height:3px;background:var(--border2);border-radius:50%;display:inline-block}
+
+/* ── FAQ ── */
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-size:.9rem;font-weight:600;color:#fff;gap:12px;user-select:none}
+.faq-q svg{width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:2;flex-shrink:0;transition:transform .25s}
+.faq-item.open .faq-q svg{transform:rotate(45deg);stroke:var(--purple2)}
+.faq-a{font-size:.85rem;color:var(--muted);line-height:1.8;padding-bottom:20px;display:none}
+.faq-item.open .faq-a{display:block}
+
+@media(max-width:1024px){
+  .plans-grid-biz{grid-template-columns:1fr;border-radius:14px}
+  .plan-col{border-right:none;border-bottom:1px solid var(--border)}
+  .plan-col:last-child{border-bottom:none}
+  .intro-strip{grid-template-columns:1fr}
+  .intro-strip-item{border-right:none;border-bottom:1px solid var(--border)}
+  .intro-strip-item:last-child{border-bottom:none}
+}
+@media(max-width:600px){
+  .plan-price-biz{font-size:2.4rem}
+}
+</style>
+
+</head>
+<body>
+<div id="nav-slot"></div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-eyebrow">Planos e Preços</div>
+  <h1 class="page-title">Soluções para cada estágio do <span>seu negócio</span></h1>
+  <p class="page-sub">Escolha o plano que melhor se adapta às suas necessidades. Todos incluem acesso à nossa equipe de especialistas e metodologias proprietárias.</p>
+</div>
+
+<!-- MAIN PLANS SECTION -->
+<section class="section">
+  <div class="container">
+
+    <!-- INTRO STRIP -->
+    <div class="intro-strip reveal">
+      <div class="intro-strip-item">
+        <div class="intro-strip-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/></svg>
+        </div>
+        <div>
+          <div class="intro-strip-label">Sem contratos longos</div>
+          <div class="intro-strip-sub">Cancele quando quiser, sem multas</div>
+        </div>
+      </div>
+      <div class="intro-strip-item">
+        <div class="intro-strip-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="intro-strip-label">Pagamento via PIX</div>
+          <div class="intro-strip-sub">Faturamento mensal, simples e seguro</div>
+        </div>
+      </div>
+      <div class="intro-strip-item">
+        <div class="intro-strip-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="intro-strip-label">Suporte especializado</div>
+          <div class="intro-strip-sub">Equipe dedicada ao seu crescimento</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAN CARDS -->
+    <div class="plans-grid-biz reveal">
+
+      <!-- STARTER -->
+      <div class="plan-col">
+        <div class="plan-tag">Para negócios em início</div>
+        <div class="plan-name-biz">Starter</div>
+        <div class="plan-price-biz"><sup>R$</sup>497</div>
+        <div class="plan-period-biz">/mês · via PIX</div>
+        <p class="plan-ideal">Para pequenas empresas e autônomos que querem dar os primeiros passos no digital.</p>
+        <div class="feat-list" style="flex:1;margin-bottom:24px">
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Landing page profissional</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Gestão de 1 canal de tráfego pago</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>12 posts/mês em 1 rede social</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Relatório quinzenal</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Suporte via e-mail</div>
+        </div>
+        <div class="plan-btn-wrap">
+          <button class="btn btn-primary" style="width:100%;background:linear-gradient(135deg,#16a34a,#22c55e);box-shadow:0 4px 16px rgba(34,197,94,.3)" onclick="goToWhatsApp('Plano Starter','R$497/mês')">Contratar Starter</button>
+        </div>      </div>
+
+      <!-- GROWTH (FEATURED) -->
+      <div class="plan-col featured">
+        <div class="plan-badge">Mais Contratado</div>
+        <div class="plan-tag">Para crescimento acelerado</div>
+        <div class="plan-name-biz">Growth</div>
+        <div class="plan-price-biz"><sup>R$</sup>1.497</div>
+        <div class="plan-period-biz">/mês · via PIX</div>
+        <p class="plan-ideal">Para empresas que querem escalar com estratégias integradas e suporte próximo.</p>
+        <div class="feat-list" style="flex:1;margin-bottom:24px">
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Site completo (até 5 páginas)</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Landing pages de campanha (até 2/mês)</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Gestão de até 3 canais de tráfego</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>30 posts/mês em 3 redes sociais</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>1 funil de vendas completo</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>SEO básico + 4 artigos/mês</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Suporte WhatsApp + 2 reuniões/mês</div>
+        </div>
+        <div class="plan-btn-wrap">
+          <button class="btn btn-primary" style="width:100%;background:linear-gradient(135deg,#16a34a,#22c55e);box-shadow:0 4px 16px rgba(34,197,94,.3)" onclick="goToWhatsApp('Plano Growth','R$1.497/mês')">Contratar Growth</button>
+        </div>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="plan-col">
+        <div class="plan-tag" style="background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.2);color:#fbbf24">Para liderança de mercado</div>
+        <div class="plan-name-biz" style="color:#fbbf24">Enterprise</div>
+        <div class="plan-price-biz"><sup>R$</sup>3.497</div>
+        <div class="plan-period-biz">/mês · via PIX</div>
+        <p class="plan-ideal">Para empresas consolidadas que querem dominância digital com equipe dedicada.</p>
+        <div class="feat-list" style="flex:1;margin-bottom:24px">
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Sites e landing pages ilimitados</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>E-commerce e integrações avançadas</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Canais de tráfego ilimitados</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Conteúdo ilimitado + vídeo</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Funis ilimitados + SEO completo</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Branding e identidade visual</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Gerente dedicado + suporte 24/7</div>
+          <div class="feat-item yes"><span class="feat-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Grupo VIP incluso</div>
+        </div>
+        <div class="plan-btn-wrap">
+          <button class="btn btn-primary" style="width:100%;background:linear-gradient(135deg,#16a34a,#22c55e);box-shadow:0 4px 16px rgba(34,197,94,.3)" onclick="goToWhatsApp('Plano Enterprise','R$3.497/mês')">Contratar Enterprise</button>
+        </div>
+      </div>
+
+    </div><!-- /plans-grid-biz -->
+
+    <!-- PIX NOTE -->
+    <div class="pix-strip reveal">
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Pagamento via PIX
+      </span>
+      <span class="pix-dot"></span>
+      <span>Faturamento mensal</span>
+      <span class="pix-dot"></span>
+      <span>Cancele quando quiser</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="section-header">
+      <div class="section-eyebrow">Dúvidas Frequentes</div>
+      <h2 class="section-title">Perguntas sobre os planos</h2>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        O que está incluso na verba de mídia paga?
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">A verba de mídia paga (o valor investido diretamente nas plataformas como Google Ads e Meta Ads) não está inclusa nos planos — ela é paga diretamente pelo cliente às plataformas. O que está incluso é a gestão estratégica: criação de campanhas, segmentação de público, criação de criativos, otimização contínua e relatórios de performance. No plano Enterprise, gerenciamos a verba sem limite de volume.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Posso contratar serviços avulsos?
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Sim. Além dos planos mensais, oferecemos serviços avulsos como criação de sites, landing pages, identidade visual e consultoria pontual. Entre em contato pelo WhatsApp para receber um orçamento personalizado para o que você precisa.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Como funciona o pagamento via PIX?
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Ao clicar em contratar, você é direcionado ao nosso WhatsApp. Nossa equipe confirma os detalhes do plano escolhido, esclarece qualquer dúvida e envia a chave PIX para pagamento. Após a confirmação, o onboarding começa em até 24 horas úteis.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Posso fazer upgrade de plano?
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Sim, você pode fazer upgrade a qualquer momento. Basta entrar em contato com seu gerente de conta ou pelo WhatsApp. O ajuste é feito proporcionalmente ao período restante do mês, sem burocracia. Muitos clientes começam no Starter e evoluem para o Growth conforme os resultados aparecem.</div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<div id="modal-slot"></div>
+<script src="components.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Métodos digitUP — Nossos Produtos</title>
+<meta name="description" content="Conheça os métodos exclusivos da digitUP: digitUP por R$199,99 e Dominar por R$349,99. Estratégias reais para quem quer resultados."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Métodos digitUP — digitUP e Dominar"/>
+<meta property="og:description" content="Método digitUP R$199,99 e Dominar R$349,99. Estratégias reais para quem quer resultados."/>
+<meta property="og:image" content="og-image.jpg"/>
+<meta property="og:site_name" content="digitUP"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="og-image.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin:0 auto}
+.product-card{border-radius:20px;padding:44px 40px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.product-card.digitup{background:linear-gradient(160deg,rgba(124,58,237,.12),var(--card));border:1px solid rgba(124,58,237,.35)}
+.product-card.dominar{background:linear-gradient(160deg,rgba(251,191,36,.08),var(--card));border:1px solid rgba(251,191,36,.3)}
+.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.product-card.digitup::before{background:var(--grad)}
+.product-card.dominar::before{background:linear-gradient(90deg,#fbbf24,#f59e0b)}
+.product-badge{display:inline-flex;align-items:center;gap:6px;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;padding:4px 12px;border-radius:20px;margin-bottom:18px;width:fit-content}
+.product-badge.digitup{background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);color:var(--purple3)}
+.product-badge.dominar{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);color:#fbbf24}
+.product-name{font-size:2rem;font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:6px}
+.product-name.dominar{color:#fbbf24}
+.product-tagline{font-size:.9rem;color:var(--muted);margin-bottom:24px;line-height:1.6}
+.product-price{display:flex;align-items:baseline;gap:4px;margin-bottom:28px}
+.product-price-val{font-size:2.8rem;font-weight:900;color:#fff;letter-spacing:-.5px}
+.product-price-val.dominar{color:#fbbf24}
+.product-price-sup{font-size:1rem;font-weight:700;color:var(--muted);align-self:flex-start;margin-top:8px}
+.product-price-period{font-size:.78rem;color:var(--muted);margin-left:4px}
+.product-divider{height:1px;background:rgba(255,255,255,.07);margin-bottom:24px}
+.product-features{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;flex:1}
+.pf{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;color:var(--text)}
+.pf svg{width:16px;height:16px;fill:none;stroke-width:2.5;flex-shrink:0;margin-top:2px}
+.pf.digitup svg{stroke:var(--purple2)}
+.pf.dominar svg{stroke:#fbbf24}
+.product-btn{width:100%;padding:15px;border:none;border-radius:10px;font-size:.95rem;font-weight:800;cursor:pointer;transition:all .2s;font-family:inherit;letter-spacing:.2px}
+.product-btn.digitup{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(124,58,237,.4)}
+.product-btn.digitup:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,58,237,.55)}
+.product-btn.dominar{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#04040a;box-shadow:0 4px 20px rgba(251,191,36,.3)}
+.product-btn.dominar:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(251,191,36,.45)}
+.compare-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.compare-table{width:100%;border-collapse:collapse;max-width:900px;margin:0 auto}
+.compare-table th{padding:16px 20px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);text-align:center;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
+.compare-table th:first-child{text-align:left;color:var(--text)}
+.compare-table th.th-d{color:var(--purple2);background:rgba(124,58,237,.05)}
+.compare-table th.th-dom{color:#fbbf24;background:rgba(251,191,36,.04)}
+.compare-table td{padding:13px 20px;font-size:.83rem;color:var(--muted);text-align:center;border-bottom:1px solid rgba(255,255,255,.04)}
+.compare-table td:first-child{text-align:left;color:var(--text);font-weight:500}
+.compare-table td.td-d{background:rgba(124,58,237,.03)}
+.compare-table td.td-dom{background:rgba(251,191,36,.02)}
+.compare-table tr:hover td{background:rgba(255,255,255,.02)}
+.ct-check{display:flex;align-items:center;justify-content:center}
+.ct-check.d svg{stroke:var(--purple2)}
+.ct-check.dom svg{stroke:#fbbf24}
+.ct-check svg{width:16px;height:16px;fill:none;stroke-width:2.5}
+.ct-x{display:flex;align-items:center;justify-content:center;opacity:.35}
+.ct-x svg{width:16px;height:16px;stroke:var(--muted);fill:none;stroke-width:2}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 0;cursor:pointer;font-size:.9rem;font-weight:600;color:#fff;gap:12px;user-select:none}
+.faq-q svg{width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:2;flex-shrink:0;transition:transform .25s}
+.faq-item.open .faq-q svg{transform:rotate(45deg);stroke:var(--purple2)}
+.faq-a{font-size:.85rem;color:var(--muted);line-height:1.8;padding-bottom:18px;display:none}
+.faq-item.open .faq-a{display:block}
+@media(max-width:768px){
+  .products-grid{grid-template-columns:1fr}
+  .product-card{padding:32px 24px}
+  .product-name{font-size:1.6rem}
+  .product-price-val{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+<div id="nav-slot"></div>
+
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-eyebrow">Métodos Exclusivos</div>
+  <h1 class="page-title">Nossos <span>Produtos</span></h1>
+  <p class="page-sub">Dois métodos desenvolvidos pela digitUP com base em anos de experiência real. Escolha o que melhor se encaixa no seu momento.</p>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section">
+  <div class="container">
+    <div class="products-grid">
+
+      <!-- digitUP -->
+      <div class="product-card digitup reveal">
+        <div class="product-badge digitup">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Método Exclusivo
+        </div>
+        <div class="product-name">digitUP</div>
+        <p class="product-tagline">O método completo para quem quer aprender marketing digital do zero e começar a gerar resultados com estratégias reais da agência.</p>
+        <div class="product-price">
+          <span class="product-price-sup">R$</span>
+          <span class="product-price-val">199</span>
+          <span style="font-size:1.1rem;font-weight:700;color:#fff">,99</span>
+          <span class="product-price-period">/mês</span>
+        </div>
+        <div class="product-divider"></div>
+        <div class="product-features">
+          <div class="pf digitup"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Curso completo de Marketing Digital</div>
+          <div class="pf digitup"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Fundamentos de tráfego pago (Google e Meta)</div>
+          <div class="pf digitup"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Funis de vendas e conversão</div>
+          <div class="pf digitup"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Método D.A.T.A. completo</div>
+          <div class="pf digitup"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Método F.U.N.I.L. 360° completo</div>
+          <div class="pf digitup"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Templates e scripts prontos para usar</div>
+          <div class="pf digitup"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Grupo exclusivo no WhatsApp</div>
+          <div class="pf digitup"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Atualizações constantes de conteúdo</div>
+          <div class="pf digitup"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Suporte em grupo</div>
+        </div>
+        <button class="product-btn digitup" onclick="goToWhatsApp('Método digitUP','R$199,99/mês')">Quero o digitUP</button>
+      </div>
+
+      <!-- DOMINAR -->
+      <div class="product-card dominar reveal">
+        <div class="product-badge dominar">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Nível Avançado
+        </div>
+        <div class="product-name dominar">Dominar</div>
+        <p class="product-tagline">O método avançado para quem quer dominar o marketing digital com acompanhamento individual, estratégias de alto nível e resultados reais.</p>
+        <div class="product-price">
+          <span class="product-price-sup">R$</span>
+          <span class="product-price-val dominar">349</span>
+          <span style="font-size:1.1rem;font-weight:700;color:#fbbf24">,99</span>
+          <span class="product-price-period">/mês</span>
+        </div>
+        <div class="product-divider"></div>
+        <div class="product-features">
+          <div class="pf dominar"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tudo do método digitUP</div>
+          <div class="pf dominar"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sistema de Escala Progressiva completo</div>
+          <div class="pf dominar"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Grupo VIP com acompanhamento individual</div>
+          <div class="pf dominar"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Landing pages profissionais (1/mês inclusa)</div>
+          <div class="pf dominar"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Estratégias reais usadas pela digitUP</div>
+          <div class="pf dominar"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Revisão de campanhas e funis pessoais</div>
+          <div class="pf dominar"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Mentoria individual mensal (1h)</div>
+          <div class="pf dominar"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Acesso antecipado a novos conteúdos</div>
+          <div class="pf dominar"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Suporte próximo e individual</div>
+        </div>
+        <button class="product-btn dominar" onclick="goToWhatsApp('Método Dominar','R$349,99/mês')">Quero o Dominar</button>
+      </div>
+
+    </div>
+
+    <!-- PIX NOTE -->
+    <div style="text-align:center;margin-top:28px;font-size:.8rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap">
+      <span style="display:inline-flex;align-items:center;gap:5px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Pagamento via PIX
+      </span>
+      <span style="width:3px;height:3px;background:var(--border2);border-radius:50%;display:inline-block"></span>
+      <span>Cancele quando quiser</span>
+      <span style="width:3px;height:3px;background:var(--border2);border-radius:50%;display:inline-block"></span>
+      <span>Acesso enviado em até 1h</span>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare-section section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Comparativo</div>
+      <h2 class="section-title">digitUP vs Dominar</h2>
+      <p class="section-sub">Veja exatamente o que cada método inclui.</p>
+    </div>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:14px">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:40%">Recurso</th>
+            <th class="th-d">digitUP — R$199,99</th>
+            <th class="th-dom">Dominar — R$349,99</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Curso completo de Marketing Digital</td><td class="td-d"><div class="ct-check d"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Método D.A.T.A.</td><td class="td-d"><div class="ct-check d"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Método F.U.N.I.L. 360°</td><td class="td-d"><div class="ct-check d"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Templates e scripts</td><td class="td-d"><div class="ct-check d"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Grupo exclusivo WhatsApp</td><td class="td-d"><div class="ct-check d"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Sistema de Escala Progressiva</td><td class="td-d"><div class="ct-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Grupo VIP individual</td><td class="td-d"><div class="ct-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Landing page profissional (1/mês)</td><td class="td-d"><div class="ct-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Revisão de campanhas pessoais</td><td class="td-d"><div class="ct-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Mentoria individual mensal (1h)</td><td class="td-d"><div class="ct-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td><td class="td-dom"><div class="ct-check dom"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></td></tr>
+          <tr><td>Suporte</td><td class="td-d" style="color:#fff;font-weight:600">Em grupo</td><td class="td-dom" style="color:#fbbf24;font-weight:600">Individual</td></tr>
+          <tr style="background:rgba(255,255,255,.02)">
+            <td style="font-weight:700;color:#fff">Investimento</td>
+            <td class="td-d" style="color:var(--purple2);font-weight:800;font-size:.9rem">R$199,99/mês</td>
+            <td class="td-dom" style="color:#fbbf24;font-weight:800;font-size:.9rem">R$349,99/mês</td>
+          </tr>
+          <tr style="background:rgba(255,255,255,.02)">
+            <td></td>
+            <td class="td-d" style="padding:14px 20px"><button class="product-btn digitup" style="padding:10px" onclick="goToWhatsApp('Método digitUP','R$199,99/mês')">Contratar</button></td>
+            <td class="td-dom" style="padding:14px 20px"><button class="product-btn dominar" style="padding:10px" onclick="goToWhatsApp('Método Dominar','R$349,99/mês')">Contratar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container" style="max-width:720px">
+    <div class="section-header">
+      <div class="section-eyebrow">Dúvidas</div>
+      <h2 class="section-title">Perguntas frequentes</h2>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Qual a diferença entre digitUP e Dominar? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="faq-a">O digitUP é o método completo para quem está começando ou quer aprender marketing digital com suporte em grupo. O Dominar inclui tudo do digitUP mais acompanhamento individual, mentoria, revisão de campanhas e uma landing page profissional por mês — ideal para quem quer resultados mais rápidos com suporte próximo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Como funciona o pagamento? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="faq-a">O pagamento é feito via PIX. Ao clicar em contratar, você é direcionado ao nosso WhatsApp. Nossa equipe confirma os detalhes e envia a chave PIX. Após a confirmação, o acesso é enviado em até 1 hora.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Posso fazer upgrade do digitUP para o Dominar? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="faq-a">Sim. Você pode fazer upgrade a qualquer momento. Basta entrar em contato pelo WhatsApp e ajustamos o plano sem burocracia.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Posso cancelar quando quiser? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="faq-a">Sim. Não há contrato de fidelidade. Você pode cancelar a qualquer momento sem multas ou taxas adicionais.</div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<div id="modal-slot"></div>
+<script src="components.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
