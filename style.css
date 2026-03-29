@@ -158,9 +158,6 @@ a{text-decoration:none;color:inherit}
 .modal-sub{font-size:.83rem;color:var(--muted);text-align:center;margin-bottom:22px}
 .modal-logo{text-align:center;margin-bottom:20px;font-size:1.2rem;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px}
 .modal-logo .nav-logo-mark{width:28px;height:28px}
-.modal-tabs{display:flex;gap:0;background:rgba(255,255,255,.04);border-radius:9px;padding:3px;margin-bottom:20px}
-.mtab{flex:1;padding:9px;background:transparent;border:none;color:var(--muted);font-size:.83rem;font-weight:600;cursor:pointer;border-radius:7px;transition:all .2s;font-family:inherit}
-.mtab.active{background:var(--purple);color:#fff}
 .field{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
 .field label{font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
 .field input,.field select,.field textarea{background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:8px;padding:11px 14px;color:var(--text);font-size:.88rem;outline:none;transition:border .2s;font-family:inherit;width:100%}
@@ -211,4 +208,162 @@ a{text-decoration:none;color:inherit}
   .section{padding:56px 16px}
   .page-header{padding:88px 16px 40px}
   .page-sub{font-size:.88rem}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE FIXES — Android / Small screens
+═══════════════════════════════════════════════════════════════ */
+
+/* Prevent horizontal overflow globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Fix all grids to single column on mobile */
+@media(max-width:600px) {
+
+  /* Nav */
+  .nav-inner { padding: 0 14px; }
+  .nav-logo { font-size: 1.1rem; }
+
+  /* Hero */
+  .hero { padding: 80px 16px 48px; text-align: center; }
+  .hero h1 { font-size: 1.9rem; letter-spacing: -.3px; }
+  .hero-sub { font-size: .9rem; }
+  .hero-btns { flex-direction: column; align-items: center; gap: 10px; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
+  .hero-stats { justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .hstat strong { font-size: 1.3rem; }
+  .hero-visual { display: none; }
+
+  /* Page header */
+  .page-header { padding: 84px 16px 36px; }
+  .page-title { font-size: 1.6rem; line-height: 1.2; }
+  .page-sub { font-size: .85rem; }
+
+  /* Sections */
+  .section { padding: 48px 16px; }
+  .container { padding: 0 16px; }
+  .section-title { font-size: 1.5rem; }
+  .section-header { margin-bottom: 36px; }
+
+  /* All 2+ column grids → 1 column */
+  .services-grid,
+  .srv-grid,
+  .recursos-grid,
+  .stats-grid,
+  .steps-grid,
+  .testi-grid,
+  .depo-grid,
+  .plans-grid,
+  .plans-grid-biz,
+  .beg-plans-grid,
+  .products-grid,
+  .why-grid,
+  .learn-grid,
+  .methods-grid,
+  .mvv-grid,
+  .team-grid,
+  .partners-grid,
+  .extra-grid,
+  .picker-grid,
+  .vip-testi-grid,
+  .benefits-grid,
+  .results-grid,
+  .contact-grid,
+  .vip-inner,
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Steps connector */
+  .step-connector, .steps-line { display: none; }
+
+  /* Plan cards */
+  .plan-col { border-right: none; border-bottom: 1px solid var(--border); }
+  .plan-col:last-child { border-bottom: none; }
+  .plans-grid-biz { border-radius: 12px; }
+  .plan-price-biz { font-size: 2.2rem; }
+
+  /* Product cards */
+  .product-card { padding: 28px 20px; }
+  .product-price-val { font-size: 2.2rem; }
+
+  /* Buttons */
+  .btn-lg { padding: 13px 24px; font-size: .9rem; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .cta-btns .btn { width: 100%; justify-content: center; }
+
+  /* Cards */
+  .card { border-radius: 12px; }
+
+  /* Modal */
+  .modal-box { padding: 24px 18px; border-radius: 14px 14px 0 0; }
+  .modal-title { font-size: 1.2rem; }
+  .field-row { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer { padding: 48px 16px 0; }
+  .footer-inner { gap: 24px; }
+  .footer-bottom-inner,
+  .footer-bottom { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .footer-certifications { flex-wrap: wrap; gap: 6px; }
+
+  /* Compare table */
+  .comp-table-wrap, .compare-table { font-size: .72rem; }
+  .comp-table th, .comp-table td { padding: 10px 10px; }
+
+  /* VIP page */
+  .vip-hero { padding: 28px 18px; }
+  .vip-title { font-size: 1.5rem; }
+  .vip-price { font-size: 2.4rem; }
+
+  /* Sobre page */
+  .timeline { padding-left: 24px; }
+  .tl-dot { left: -31px; }
+
+  /* Contact */
+  .contact-form-card { padding: 24px 18px; }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Intro strip */
+  .intro-strip { grid-template-columns: 1fr; }
+  .intro-strip-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .intro-strip-item:last-child { border-bottom: none; }
+
+  /* FAQ quick links */
+  [style*="grid-template-columns:repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Toast */
+  #toast { font-size: .78rem; padding: 10px 16px; white-space: normal; text-align: center; max-width: 90vw; }
+
+  /* Misc text overflow */
+  * { word-break: break-word; }
+  a, button { -webkit-tap-highlight-color: transparent; }
+}
+
+/* Tablet fixes */
+@media(min-width:601px) and (max-width:900px) {
+  .hero { padding: 90px 24px 52px; text-align: center; }
+  .hero-btns { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-visual { display: none; }
+  .services-grid,
+  .srv-grid,
+  .recursos-grid { grid-template-columns: 1fr 1fr !important; }
+  .stats-grid,
+  .results-grid { grid-template-columns: 1fr 1fr !important; }
+  .steps-grid { grid-template-columns: 1fr 1fr !important; }
+  .steps-line { display: none; }
+  .plans-grid-biz { grid-template-columns: 1fr !important; }
+  .products-grid { grid-template-columns: 1fr !important; }
+  .team-grid { grid-template-columns: 1fr 1fr !important; }
+  .methods-grid { grid-template-columns: 1fr !important; }
+  .vip-inner { grid-template-columns: 1fr !important; }
+  .contact-grid { grid-template-columns: 1fr !important; }
+  .field-row { grid-template-columns: 1fr 1fr; }
+  .cta-btns { justify-content: center; }
 }
