@@ -96,7 +96,7 @@ function openModal(type, planName, planPrice) {
   const overlay = document.getElementById('modalOverlay');
   if (!overlay) return;
   document.querySelectorAll('.modal-panel').forEach(p => p.style.display = 'none');
-  const panel = document.getElementById('panel-' + type);
+  const panel = document.getElementById('panel-' + (type === 'login' ? 'register' : type));
   if (panel) panel.style.display = 'block';
   if (type === 'checkout' && planName) {
     const el = document.getElementById('selectedPlan');
@@ -129,16 +129,6 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-function switchTab(type) {
-  document.querySelectorAll('.modal-panel').forEach(p => p.style.display = 'none');
-  document.querySelectorAll('.mtab').forEach(t => t.classList.remove('active'));
-  const panel = document.getElementById('panel-' + type);
-  if (panel) panel.style.display = 'block';
-  const tab = document.querySelector('.mtab[data-tab="' + type + '"]');
-  if (tab) tab.classList.add('active');
-}
-window.switchTab = switchTab;
-
 // ── WHATSAPP PIX REDIRECT ─────────────────────────────────────
 function goToWhatsApp(planName, planPrice) {
   const name = planName || window._selectedPlanName || 'Plano';
@@ -159,6 +149,25 @@ function handleForm(e, msg) {
   showToast(msg);
 }
 window.handleForm = handleForm;
+
+function handleDiagnostico(e) {
+  e.preventDefault();
+  const nome = ((document.getElementById('diag-nome')?.value || '') + ' ' + (document.getElementById('diag-sob')?.value || '')).trim();
+  const email = document.getElementById('diag-email')?.value || '';
+  const tel = document.getElementById('diag-tel')?.value || '';
+  const seg = document.getElementById('diag-seg')?.value || '';
+  const texto = [
+    'Olá! Quero um diagnóstico gratuito da digitUP.',
+    '',
+    nome ? 'Nome: ' + nome : '',
+    email ? 'E-mail: ' + email : '',
+    tel ? 'WhatsApp: ' + tel : '',
+    seg ? 'Segmento: ' + seg : '',
+  ].filter(Boolean).join('\n');
+  window.open('https://wa.me/5511993353331?text=' + encodeURIComponent(texto), '_blank');
+  closeModal();
+}
+window.handleDiagnostico = handleDiagnostico;
 
 // ── TOAST ─────────────────────────────────────────────────────
 function showToast(msg) {
