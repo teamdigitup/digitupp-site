@@ -49,40 +49,37 @@ const NAV_HTML = `
       <a href="planos.html" class="btn btn-primary btn-sm">Começar Agora</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" class="nav-link" onclick="closeMobile()">Início</a>
-  <a href="servicos.html" class="nav-link" onclick="closeMobile()">Serviços</a>
-  <a href="comecar.html" class="nav-link" onclick="closeMobile()">Começar</a>
-  <a href="planos.html" class="nav-link" onclick="closeMobile()">Planos</a>
-  <a href="vip.html" class="nav-link" onclick="closeMobile()">VIP</a>
-  <a href="sobre.html" class="nav-link" onclick="closeMobile()">Sobre</a>
-  <a href="contato.html" class="nav-link" onclick="closeMobile()">Contato</a>
-  <a href="planos.html" class="btn btn-primary" onclick="closeMobile()">Começar Agora</a>
-</div>`;
-
-// ── FOOTER ────────────────────────────────────────────────────
-const FOOTER_HTML = `
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="nav-logo-mark">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        digit<span class="logo-up">UP</span>
-      </div>
-      <p>Agência de marketing digital fundada em 2023, especializada em escalar negócios com estratégias comprovadas e resultados mensuráveis.</p>
-      <div class="footer-social">
-        <a class="social-btn" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a class="social-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        <a class="social-btn" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
-        <a class="social-btn" href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+        <div class="contact-form-title">Envie uma mensagem</div>
+        <p class="contact-form-sub">Preencha os campos abaixo e clique em enviar — você será direcionado ao nosso WhatsApp com a mensagem pronta.</p>
+        <form onsubmit="submitContact(event)">
+          <div class="form-row">
+            <div class="field"><label>Nome</label><input type="text" id="cf-nome" placeholder="João" required/></div>
+            <div class="field"><label>Sobrenome</label><input type="text" id="cf-sobrenome" placeholder="Silva" required/></div>
+          </div>
+          <div class="field"><label>WhatsApp</label><input type="tel" id="cf-tel" placeholder="+55 (11) 99999-9999" required/></div>
+          <div class="field"><label>Empresa (opcional)</label><input type="text" id="cf-empresa" placeholder="Nome da empresa"/></div>
+          <div class="field">
+            <label>Assunto</label>
+            <select id="cf-assunto">
+              <option value="">Selecione o assunto...</option>
+              <option>Diagnóstico Gratuito</option>
+              <option>Informações sobre Planos</option>
+              <option>Método digitUP</option>
+              <option>Método Dominar</option>
+              <option>Tráfego Pago</option>
+              <option>Gestão de Redes Sociais</option>
+              <option>Funis de Vendas</option>
+              <option>SEO e Conteúdo</option>
+              <option>Grupo VIP</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field"><label>Mensagem</label><textarea id="cf-msg" placeholder="Descreva seu projeto, objetivos e como podemos ajudar..." rows="4"></textarea></div>
+          <button type="submit" class="contact-submit" style="background:linear-gradient(135deg,#25d366,#128c7e);box-shadow:0 4px 20px rgba(37,211,102,.3)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Enviar pelo WhatsApp
+          </button>
+        </form>s="social-btn" href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
@@ -156,13 +153,29 @@ const MODAL_HTML = `
           <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         digit<span class="logo-up">UP</span>
-      </div>
-      <div class="modal-title">Contratar via PIX</div>
-      <div class="modal-sub">Pagamento seguro pelo WhatsApp</div>
-      <div id="selectedPlan" style="background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);border-radius:9px;padding:12px 14px;margin-bottom:18px;font-size:.85rem;color:var(--text)"></div>
-      <div style="background:rgba(74,222,128,.05);border:1px solid rgba(74,222,128,.15);border-radius:10px;padding:16px;margin-bottom:18px">
-        <div style="font-size:.78rem;font-weight:700;color:#4ade80;margin-bottom:10px">Como funciona</div>
-        <div style="display:flex;flex-direction:column;gap:8px">
+<script>
+function submitContact(e) {
+  e.preventDefault();
+  const nome = (document.getElementById('cf-nome').value + ' ' + document.getElementById('cf-sobrenome').value).trim();
+  const tel = document.getElementById('cf-tel').value;
+  const empresa = document.getElementById('cf-empresa').value;
+  const assunto = document.getElementById('cf-assunto').value || 'Contato geral';
+  const msg = document.getElementById('cf-msg').value;
+
+  const texto = [
+    'Olá! Vim pelo site da digitUP.',
+    '',
+    'Nome: ' + nome,
+    tel ? 'WhatsApp: ' + tel : '',
+    empresa ? 'Empresa: ' + empresa : '',
+    'Assunto: ' + assunto,
+    msg ? 'Mensagem: ' + msg : '',
+  ].filter(Boolean).join('\n');
+
+  window.open('https://wa.me/5511993353331?text=' + encodeURIComponent(texto), '_blank');
+  e.target.reset();
+}
+</script>div style="display:flex;flex-direction:column;gap:8px">
           <div style="display:flex;gap:8px;font-size:.78rem;color:var(--muted)"><span style="width:18px;height:18px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:#fff;flex-shrink:0">1</span>Clique em "Falar no WhatsApp" abaixo</div>
           <div style="display:flex;gap:8px;font-size:.78rem;color:var(--muted)"><span style="width:18px;height:18px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:#fff;flex-shrink:0">2</span>Nossa equipe confirma os detalhes</div>
           <div style="display:flex;gap:8px;font-size:.78rem;color:var(--muted)"><span style="width:18px;height:18px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:#fff;flex-shrink:0">3</span>Enviamos a chave PIX com segurança</div>
@@ -179,12 +192,4 @@ const MODAL_HTML = `
 </div>
 <div id="toast"></div>`;
 
-// ── INJECT ────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  const navSlot = document.getElementById('nav-slot');
-  if (navSlot) navSlot.outerHTML = NAV_HTML;
-  const footerSlot = document.getElementById('footer-slot');
-  if (footerSlot) footerSlot.outerHTML = FOOTER_HTML;
-  const modalSlot = document.getElementById('modal-slot');
-  if (modalSlot) modalSlot.outerHTML = MODAL_HTML;
-});
+
